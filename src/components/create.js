@@ -21,7 +21,7 @@ function Create() {
             author: author
         };
 
-        axios.post('http://localhost:4000/api/books',books)
+        axios.post('http://localhost:4000/api/books',book)
         .then()
         .catch();
 
