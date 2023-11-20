@@ -20,11 +20,12 @@ next();
 const mongoose = require('mongoose');
 
 main().catch(err => console.log(err));
-
+//This code takes information from the mongo database we created
 async function main() {
   await mongoose.connect('mongodb+srv://admin:admin@datarep2023.hlllrsc.mongodb.net/?retryWrites=true&w=majority');
 
 }
+//this is the format for the mongo Database
 const bookSchema = new mongoose.Schema({
    title:String,
    cover:String,
@@ -33,7 +34,7 @@ const bookSchema = new mongoose.Schema({
 
 
 const bookModel = mongoose.model('books',bookSchema);
-
+//this is a post method to send the values to the Database
 app.post('/api/books', (req,res ) => {
    console.log(req.body);
 
